@@ -1,9 +1,9 @@
-package cn.dwd.designpattern.builder_pattern.pattern;
+package cn.dwd.designpattern.create_pattern.abstractfactory;
 
-import cn.dwd.designpattern.builder_pattern.old.Door;
-import cn.dwd.designpattern.builder_pattern.old.Maze;
-import cn.dwd.designpattern.builder_pattern.old.Room;
-import cn.dwd.designpattern.builder_pattern.old.Wall;
+import cn.dwd.designpattern.create_pattern.old.Door;
+import cn.dwd.designpattern.create_pattern.old.Maze;
+import cn.dwd.designpattern.create_pattern.old.Room;
+import cn.dwd.designpattern.create_pattern.old.Wall;
 
 /**
  *
@@ -29,7 +29,12 @@ public class DefaultMazeFactory implements MazeFactory {
     }
 
     @Override
-    public Maze makeMaze() {
-        return new Maze();
+    public Maze makeMaze(int n) {
+        return new Maze(n);
+    }
+
+    @Override
+    public String createName() {
+        return "default maze";
     }
 }

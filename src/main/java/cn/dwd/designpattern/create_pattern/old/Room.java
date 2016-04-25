@@ -1,4 +1,4 @@
-package cn.dwd.designpattern.builder_pattern.old;
+package cn.dwd.designpattern.create_pattern.old;
 
 /**
  * Created by xiaoyanzi on 16/4/24.
@@ -29,4 +29,6 @@ public class Room extends MapSite {
     private int roomNumber;
 
     private MapSite[] mapSites= new MapSite[4];
+
+
 }

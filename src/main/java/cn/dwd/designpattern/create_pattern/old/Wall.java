@@ -1,4 +1,4 @@
-package cn.dwd.designpattern.builder_pattern.old;
+package cn.dwd.designpattern.create_pattern.old;
 
 /**
  * 描述:墙壁

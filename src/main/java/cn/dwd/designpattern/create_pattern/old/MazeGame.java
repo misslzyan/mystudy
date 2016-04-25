@@ -1,4 +1,4 @@
-package cn.dwd.designpattern.builder_pattern.old;
+package cn.dwd.designpattern.create_pattern.old;
 
 /**
  * 描述:生成迷宫
@@ -8,7 +8,7 @@ package cn.dwd.designpattern.builder_pattern.old;
 public class MazeGame {
 
     public Maze createMaze(){
-        Maze maze = new Maze();
+        Maze maze = new Maze(2);
         Room r1 = new Room(1);
         Room r2 = new Room(2);
 
