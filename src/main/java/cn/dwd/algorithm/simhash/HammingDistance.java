@@ -1,5 +1,7 @@
 package cn.dwd.algorithm.simhash;
 
+import java.util.PriorityQueue;
+
 /**
  * 海明距离
  * @author weidongduan
@@ -30,6 +32,8 @@ public class HammingDistance {
 	 * @param args
 	 */
 	public static void main(String[] args) {
+		PriorityQueue<String> queue = new PriorityQueue<String>();
+		
 		long a = 1;
 		long b = 4;
 		System.out.println(hammingDistance(a, b));
