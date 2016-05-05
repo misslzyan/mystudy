@@ -6,7 +6,7 @@ package cn.dwd.mail.notpattern;
 public class TestMailSend {
 
     public static void main(String[] args) throws Exception{
-        SimpleMailSender sender = new SimpleMailSender("smtp.163.com","13552627021@163.com","hidden");
+        SimpleMailSender sender = new SimpleMailSender("smtp.163.com","13552627021@163.com","miss111");
         sender.send("532808406@qq.com","javamail","woshihaha");
 
         System.out.println("success send");
