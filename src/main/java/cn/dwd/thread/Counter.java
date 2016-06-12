@@ -6,6 +6,7 @@ import net.jcip.annotations.ThreadSafe;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.concurrent.ExecutorCompletionService;
 
 /**
  * 描述:使用java监视器模式的线程安全计数器
@@ -30,5 +31,8 @@ public class Counter {
 
     public static void main(String[] args) {
         Collections.synchronizedList(new ArrayList<String>());
+
+
+        ExecutorCompletionService a;
     }
 }
