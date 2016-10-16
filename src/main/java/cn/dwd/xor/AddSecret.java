@@ -1,5 +1,9 @@
 package cn.dwd.xor;
 
+import javax.mail.Address;
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * 利用异或对数据进行加密
  * Created by xiaoyanzi on 16/10/10.
@@ -23,5 +27,19 @@ public class AddSecret {
         System.out.println((char)n1);
         System.out.println((char)n2);
         System.out.println((char)n3);
+        List<AddSecret>  list = new ArrayList<>();
+
+        while(true){
+            for(int i = 0;i<500;i++){
+
+                AddSecret a = new AddSecret();
+                list.add(a);
+            }
+            try {
+                Thread.sleep(2);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
     }
 }
