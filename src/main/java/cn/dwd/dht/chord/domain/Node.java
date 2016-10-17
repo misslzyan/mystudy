@@ -1,5 +1,7 @@
 package cn.dwd.dht.chord.domain;
 
+import cn.dwd.dht.chord.config.Config;
+
 import java.util.List;
 import java.util.Map;
 
@@ -13,13 +15,15 @@ public class Node {
 
     private Node[] finger;
 
-    /*负责内容结点*/
+    /*负责内容结点 引用*/
     private Map<Integer,ComponentNode> componentNodeMap;
 
-    /*提供内容结点*/
+    /*提供内容结点 物理存储*/
     private Map<Integer,FileNode> fileNodeMap;
 
     private int id;
+
+    private Config config;
 
     public Node(int size){
         finger = new Node[size];
@@ -55,6 +59,14 @@ public class Node {
 
     public void setComponentNodeMap(Map<Integer, ComponentNode> componentNodeMap) {
         this.componentNodeMap = componentNodeMap;
+    }
+
+    public Config getConfig() {
+        return config;
+    }
+
+    public void setConfig(Config config) {
+        this.config = config;
     }
 
     public Map<Integer, FileNode> getFileNodeMap() {

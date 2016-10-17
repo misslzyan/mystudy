@@ -21,7 +21,7 @@ public class InitChord {
 
     private static final Logger logger = Logger.getLogger(InitChord.class);
 
-    private static Node node;
+    public static Node node;
 
     public static  void init() throws IOException, NoSuchAlgorithmException {
         Config config = Config.getConfig();
@@ -43,6 +43,7 @@ public class InitChord {
             fileNode.setId(key);
             fileNodeMap.put(key,fileNode);
         }
+        node.setConfig(config);
         node.setFileNodeMap(fileNodeMap);
         logger.info(fileNodeMap);
         InitChord.node = node;
