@@ -9,9 +9,14 @@ import java.util.regex.Pattern;
 public class SqlPattern {
 
     public static void main(String[] args) {
+        long start = System.currentTimeMillis();
 //        String sql = "select a1,a2,a3 from b where c=d and( m=n or x=y) group by a1,a2,a3 order by a1 limit 10";
-        String sql = "select a1,a2,a3 from b where mm in (asfa,a,2) or  c=d and( m=n or x=y)  group by a1,a2,a3 order by a1 limit 10 interval (111,222) granularity 2";
-        Pattern pattern = Pattern.compile("^select\\s+(?<result>\\w+(?:,\\w+)*)\\s+from\\s+(?<dataSource>\\w+)(?:\\s+where\\s+(?<filter>(?:[\\s\\(\\)\\w=]+(\\((?:[,\\d\\w]+)\\))?)+))?(?:\\s+group\\s+by\\s+(?<groupBy>\\w+(?:,\\w+)*))?(?:\\s+order\\s+by\\s+(?<orderBy>\\w+))?(?:\\s+limit\\s+(?<limit>\\d+))?(?:\\s+interval\\s+\\((?<interval>[\\d]+,[\\d]+)\\))(?:\\s+granularity\\s+(?<granularity>[\\d]+))$");
+//        String sql = "select a1,a2,a3 from b where mm in (asfa,a,2) or  c=d and( m=n or x=y) and ccc in (1,2,3)  group by a1,a2,a3 order by a1 limit 10 interval (111,222) granularity 2";
+
+
+
+        String sql = "select result1,result2 from datasource    where mm in (asfa,a,2) or  c=d and( m=n or x=y) and ccc in (1,2,3)    group by result1,result2 order by result1 limit 10 interval (111,222) granularity 1";
+        Pattern pattern = Pattern.compile("^select\\s+(?<result>\\w+(?:,\\w+)*)\\s+from\\s+(?<dataSource>\\w+)\\s+where\\s+(?<filter>[\\s\\w,=\\(\\)]+)\\s+group\\s+by\\s+(?<groupBy>\\w+(?:,\\w+)*)\\s+order\\s+by\\s+(?<orderBy>\\w+)\\s+limit\\s+(?<limit>\\d+)\\s+interval\\s+\\((?<interval>[\\d]+,[\\d]+)\\)\\s+granularity\\s+(?<granularity>[\\d]+)$");
         Matcher m = pattern.matcher(sql);
         if(m.matches()){
             String result = m.group("result");
@@ -30,7 +35,18 @@ public class SqlPattern {
             System.out.println(limit);
             System.out.println(interval);
             System.out.println(granularity);
+
         }
+
+        long end = System.currentTimeMillis();
+
+        System.out.println(" ");
+        System.out.println(1);
+//        System.out.println("wanbi"+(end-start)/1000);
+//        String[] aaa = sql.split("[^\\d\\w]+");
+//        for(String temp : aaa){
+//            System.out.println(temp);
+//        }
 //        String a = "abbbaabbbaaabbb";
 //        Pattern p = Pattern.compile("(?:(.*+)bbb)");
 //        Matcher mm = p.matcher(a);
