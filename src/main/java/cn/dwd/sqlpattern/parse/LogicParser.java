@@ -41,4 +41,6 @@ public class LogicParser implements Parser<LogicTree> {
     public LogicTree getResult() {
         return this.logicTree;
     }
+
+
 }
